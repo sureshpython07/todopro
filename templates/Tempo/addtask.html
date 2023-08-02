@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Home{% endblock title %}
+{% block addtaskactive %}active{% endblock addtaskactive %}
+{% block body %}
+<div class= "container my-3">
+    <h2 class="text-center">Add Task</h1>
+        <form action="addtask" method='post'>
+            {% csrf_token %}
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Task</label>
+            <input type="text" class="form-control" name="task" id="exampleFormControlInput1" placeholder="Task">
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Task Description</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" name="desc" rows="3"></textarea>
+          </div>
+          <input class="btn btn-primary" type="submit" value="Submit">
+        </form>
+</div>
+{% endblock body %}
